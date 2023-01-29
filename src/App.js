@@ -1,5 +1,9 @@
+import { RouterProvider } from "react-router-dom";
+
+import { router } from "./routing/router";
+
 function App() {
-  return <div>!! Mandril Memory Game !!</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
