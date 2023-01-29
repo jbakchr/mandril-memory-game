@@ -4,7 +4,9 @@ import { Container } from "@mui/material";
 export const HomePage = () => {
   return (
     <Container maxWidth="md">
-      <header>!! Mandril Memory Game !!</header>
+      <header style={{ textAlign: "center" }}>
+        <h1>!! Mandril Memory Game !!</h1>
+      </header>
     </Container>
   );
 };
