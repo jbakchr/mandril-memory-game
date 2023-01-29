@@ -1,5 +1,10 @@
 import React from "react";
+import { Container } from "@mui/material";
 
 export const HomePage = () => {
-  return <header>!! Mandril Memory Game !!</header>;
+  return (
+    <Container maxWidth="md">
+      <header>!! Mandril Memory Game !!</header>
+    </Container>
+  );
 };
