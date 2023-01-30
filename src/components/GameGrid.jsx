@@ -16,9 +16,15 @@ export const GameGrid = () => {
     setGameCards(cards);
   }, []);
 
+  const onCardClick = (card) => {
+    console.log("You've clicked a card:", card);
+  };
+
   const renderGameCards = () => {
     return gameCards.map((card) => {
-      return <GameCard key={card.position} card={card} />;
+      return (
+        <GameCard key={card.position} card={card} onCardClick={onCardClick} />
+      );
     });
   };
 
