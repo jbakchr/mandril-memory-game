@@ -4,9 +4,9 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 import logo from "../assets/card_logo.jpeg";
 
-export const GameCard = ({ card, onCardClick }) => {
+export const GameCard = ({ card, cardIndex, onCardClick }) => {
   const onCardClickHandler = () => {
-    onCardClick(card);
+    onCardClick(card, cardIndex);
   };
 
   const img = card.selected ? require(`../assets/${card.imgUrl}`) : logo;

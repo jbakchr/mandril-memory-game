@@ -25,10 +25,10 @@ export const GameGrid = () => {
     setGameCards(cards);
   }, []);
 
-  const onCardClick = (card) => {
+  const onCardClick = (card, index) => {
     // When a card is clicked set its 'selected' property to 'true'
     const cards = [...gameCards];
-    cards[card.position] = {
+    cards[index] = {
       ...card,
       selected: true,
     };
@@ -37,7 +37,14 @@ export const GameGrid = () => {
 
   const renderGameCards = () => {
     return gameCards.map((card, index) => {
-      return <GameCard key={index} card={card} onCardClick={onCardClick} />;
+      return (
+        <GameCard
+          key={index}
+          card={card}
+          cardIndex={index}
+          onCardClick={onCardClick}
+        />
+      );
     });
   };
 
