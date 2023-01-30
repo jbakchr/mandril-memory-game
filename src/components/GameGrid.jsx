@@ -23,7 +23,7 @@ export const GameGrid = () => {
       ...card,
       selected: true,
     };
-    console.log("cards:", cards);
+    setGameCards(cards);
   };
 
   const renderGameCards = () => {
