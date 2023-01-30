@@ -9,6 +9,7 @@ import data from "../data/data.json";
 
 export const GameGrid = () => {
   const [gameCards, setGameCards] = useState([]);
+  const [selectedCards, setSelectedCards] = useState([]);
 
   useEffect(() => {
     let cards = [];
@@ -35,6 +36,11 @@ export const GameGrid = () => {
     // If a card hasn't been clicked then we first set its 'selected' property
     // to 'true'
     const cards = updateCards(card, index);
+
+    // Then we add the clicked card to the 'selectedCards' array in order to check
+    // if the user has chosen two of the same cards
+    const updatedSelection = [...selectedCards, card];
+
     setGameCards(cards);
   };
 
