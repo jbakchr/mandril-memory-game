@@ -4,7 +4,13 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 import logo from "../assets/card_logo.jpeg";
 
-export const GameCard = () => {
+export const GameCard = ({ card }) => {
+  console.log(card);
+
+  const onCardClick = () => {
+    console.log("card clicked!");
+  };
+
   return (
     <Grid xs={2}>
       <Paper
@@ -21,6 +27,7 @@ export const GameCard = () => {
           },
         }}
         elevation={15}
+        onClick={onCardClick}
       />
     </Grid>
   );

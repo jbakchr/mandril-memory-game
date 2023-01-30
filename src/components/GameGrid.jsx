@@ -18,11 +18,9 @@ export const GameGrid = () => {
 
   const renderGameCards = () => {
     return gameCards.map((card) => {
-      return <GameCard key={card.position} />;
+      return <GameCard key={card.position} card={card} />;
     });
   };
-
-  console.log("game cards:", gameCards);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
