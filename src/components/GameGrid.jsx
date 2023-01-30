@@ -10,8 +10,8 @@ export const GameGrid = () => {
   useEffect(() => {
     let cards = [];
     for (let i = 0; i < 4; i++) {
-      const character = i % 2 === 0 ? "Fisserul Lohman" : "Broder Salsa";
-      cards.push({ position: i, character, selected: false });
+      const imgUrl = i % 2 === 0 ? "fisserul_lohman.jpeg" : "wandy_skæg.jpeg";
+      cards.push({ position: i, imgUrl, selected: false });
     }
     setGameCards(cards);
   }, []);
