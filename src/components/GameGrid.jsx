@@ -1,19 +1,27 @@
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import _ from "lodash";
 
 import { GameCard } from "./GameCard";
+
+import data from "../data/data.json";
 
 export const GameGrid = () => {
   const [gameCards, setGameCards] = useState([]);
 
   useEffect(() => {
     let cards = [];
-    for (let i = 0; i < 4; i++) {
-      const imgUrl =
-        i % 2 === 0 ? "fisserul_lohman.jpeg" : "wandy_thyskæg.jpeg";
-      cards.push({ position: i, imgUrl, selected: false });
+    for (let i = 0; i < data.length; i++) {
+      for (let j = 0; j < 2; j++) {
+        cards.push({
+          imgUrl: data[i],
+          selected: false,
+        });
+      }
     }
+    cards = _.shuffle(cards);
+
     setGameCards(cards);
   }, []);
 
@@ -28,10 +36,8 @@ export const GameGrid = () => {
   };
 
   const renderGameCards = () => {
-    return gameCards.map((card) => {
-      return (
-        <GameCard key={card.position} card={card} onCardClick={onCardClick} />
-      );
+    return gameCards.map((card, index) => {
+      return <GameCard key={index} card={card} onCardClick={onCardClick} />;
     });
   };
 
