@@ -16,13 +16,18 @@ export const GameGrid = () => {
     setGameCards(cards);
   }, []);
 
+  const renderGameCards = () => {
+    return gameCards.map((card) => {
+      return <GameCard key={card.position} />;
+    });
+  };
+
   console.log("game cards:", gameCards);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <GameCard />
-        <GameCard />
+        {renderGameCards()}
       </Grid>
     </Box>
   );
