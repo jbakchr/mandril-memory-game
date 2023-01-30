@@ -17,7 +17,13 @@ export const GameGrid = () => {
   }, []);
 
   const onCardClick = (card) => {
-    console.log("You've clicked a card:", card);
+    // When a card is clicked set its 'selected' property to 'true'
+    const cards = [...gameCards];
+    cards[cards.position] = {
+      ...card,
+      selected: true,
+    };
+    console.log("cards:", cards);
   };
 
   const renderGameCards = () => {
