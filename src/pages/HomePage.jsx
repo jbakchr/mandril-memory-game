@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "@mui/material";
 
+import { GameHeader } from "../components/GameHeader";
+
 export const HomePage = () => {
   return (
     <Container maxWidth="md">
-      <header style={{ textAlign: "center" }}>
-        <h1>!! Mandril Memory Game !!</h1>
-      </header>
+      <GameHeader />
     </Container>
   );
 };
