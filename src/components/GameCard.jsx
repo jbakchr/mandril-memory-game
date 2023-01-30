@@ -8,15 +8,19 @@ export const GameCard = () => {
   return (
     <Grid xs={2}>
       <Paper
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+        sx={{
           height: "150px",
           borderRadius: "25px",
           background: `url(${logo})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          ":hover": {
+            transform: "scale(1.05)",
+            transition: "transform 500ms",
+          },
         }}
-        elevation={5}
+        elevation={15}
       />
     </Grid>
   );
