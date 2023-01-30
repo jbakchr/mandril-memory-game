@@ -5,7 +5,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import logo from "../assets/card_logo.jpeg";
 
 export const GameCard = ({ card, onCardClick }) => {
-  console.log(card);
+  // console.log(card);
 
   const onCardClickHandler = () => {
     onCardClick(card);

@@ -19,7 +19,7 @@ export const GameGrid = () => {
   const onCardClick = (card) => {
     // When a card is clicked set its 'selected' property to 'true'
     const cards = [...gameCards];
-    cards[cards.position] = {
+    cards[card.position] = {
       ...card,
       selected: true,
     };
@@ -33,6 +33,8 @@ export const GameGrid = () => {
       );
     });
   };
+
+  console.log("cards:", gameCards);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
