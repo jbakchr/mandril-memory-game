@@ -5,11 +5,11 @@ import Grid from "@mui/material/Unstable_Grid2";
 import logo from "../assets/card_logo.jpeg";
 
 export const GameCard = ({ card, onCardClick }) => {
-  // console.log(card);
-
   const onCardClickHandler = () => {
     onCardClick(card);
   };
+
+  const img = card.selected ? require(`../assets/${card.imgUrl}`) : logo;
 
   return (
     <Grid xs={2}>
@@ -17,7 +17,7 @@ export const GameCard = ({ card, onCardClick }) => {
         sx={{
           height: "150px",
           borderRadius: "25px",
-          background: `url(${logo})`,
+          background: `url(${img})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

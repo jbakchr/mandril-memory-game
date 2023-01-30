@@ -10,7 +10,8 @@ export const GameGrid = () => {
   useEffect(() => {
     let cards = [];
     for (let i = 0; i < 4; i++) {
-      const imgUrl = i % 2 === 0 ? "fisserul_lohman.jpeg" : "wandy_skæg.jpeg";
+      const imgUrl =
+        i % 2 === 0 ? "fisserul_lohman.jpeg" : "wandy_thyskæg.jpeg";
       cards.push({ position: i, imgUrl, selected: false });
     }
     setGameCards(cards);
@@ -33,8 +34,6 @@ export const GameGrid = () => {
       );
     });
   };
-
-  console.log("cards:", gameCards);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
