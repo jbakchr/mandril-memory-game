@@ -10,7 +10,8 @@ export const GameGrid = () => {
   useEffect(() => {
     let cards = [];
     for (let i = 0; i < 4; i++) {
-      cards.push({ position: i, character: "Mogens", selected: false });
+      const character = i % 2 === 0 ? "Fisserul Lohman" : "Broder Salsa";
+      cards.push({ position: i, character, selected: false });
     }
     setGameCards(cards);
   }, []);
