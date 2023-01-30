@@ -26,13 +26,25 @@ export const GameGrid = () => {
   }, []);
 
   const onCardClick = (card, index) => {
-    // When a card is clicked set its 'selected' property to 'true'
+    // When a card is clicked we first check if has already been clicked
+    // If so we just return as it doesn't make sense to do anything further
+    if (gameCards[index].selected) {
+      return;
+    }
+
+    // If a card hasn't been clicked then we first set its 'selected' property
+    // to 'true'
+    const cards = updateCards(card, index);
+    setGameCards(cards);
+  };
+
+  const updateCards = (card, index) => {
     const cards = [...gameCards];
     cards[index] = {
       ...card,
       selected: true,
     };
-    setGameCards(cards);
+    return cards;
   };
 
   const renderGameCards = () => {
