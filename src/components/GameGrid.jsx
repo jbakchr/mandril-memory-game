@@ -65,6 +65,12 @@ export const GameGrid = () => {
       // If the user has selected 2 cards then we first check if the 2 cards holds the same image
       if (selectionOfCards[0].imgUrl === card.imgUrl) {
         console.log("cards are the same!!!");
+        // If the 2 cards are the same then we just update the game cards to reflect this
+        const cards = [...gameCards];
+        cards[selectionOfCards[0].position].cardFound = true;
+        cards[selectionOfCards[1].position].cardFound = true;
+        setSelectedCards([]);
+        setGameCards(cards);
       } else {
         // TODO: This update of unequal cards should be refactored to its own function
         // if the cards aren't the same then we should first just show the image of the selected card which
