@@ -38,6 +38,8 @@ export const GameGrid = () => {
       };
     });
 
+    console.log(cards);
+
     // Lastly we set the cards on state so the can get rendered and the game begin
     setGameCards(cards);
   }, []);
