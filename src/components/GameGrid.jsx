@@ -46,16 +46,16 @@ export const GameGrid = () => {
       console.log("selections are the same");
     } else {
       // If the length of the selected cards isn't equal to 2 then that means that the user hasn't selected
-      // 2 cards just yet and so it is still the users turn to select another card for which reason we just
-      // update
+      // 2 cards just yet and so it is still the users turn to select another card.
+      // Hence we first update the list of cards in order to display the selected cards image when the list of
+      // cards is rendered again
+      const cards = [...gameCards];
+      cards[index] = card;
+
+      // And finally we then set state
+      setSelectedCards(selectionOfCards);
+      setGameCards(cards);
     }
-
-    // Then we update the entire list of game cards to reflect that the clicked has been selected
-    const cards = [...gameCards];
-    cards[index] = card;
-
-    // And finally we just add the modified game cards back to state
-    setGameCards(cards);
   };
 
   const renderGameCards = () => {
