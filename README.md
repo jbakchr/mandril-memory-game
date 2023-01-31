@@ -44,3 +44,11 @@ npm start
 ```
 
 And .. enjoy!! 👍👌
+
+## Contributors
+
+The gigantic list of awesome contributors to this project is:
+
+<a href="https://github.com/jbakchr/mandril-memory-game/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jbakchr/mandril-memory-game" />
+</a>
