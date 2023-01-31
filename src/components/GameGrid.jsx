@@ -20,6 +20,7 @@ export const GameGrid = () => {
         cards.push({
           imgUrl: data[j],
           selected: false,
+          cardFound: false,
         });
       }
     }
