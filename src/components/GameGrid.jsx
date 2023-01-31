@@ -13,14 +13,16 @@ export const GameGrid = () => {
 
   useEffect(() => {
     let cards = [];
-    for (let i = 0; i < data.length; i++) {
-      for (let j = 0; j < 2; j++) {
+    for (let i = 0; i < 2; i++) {
+      for (let j = 0; j < data.length; j++) {
         cards.push({
-          imgUrl: data[i],
+          position: i === 0 ? j : data.length + j,
+          imgUrl: data[j],
           selected: false,
         });
       }
     }
+
     cards = _.shuffle(cards);
 
     setGameCards(cards);
