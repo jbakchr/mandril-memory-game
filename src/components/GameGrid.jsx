@@ -56,6 +56,7 @@ export const GameGrid = () => {
 
     // Then we add the clicked card to the list of selected cards
     const selectionOfCards = [...selectedCards, card];
+    console.log(selectionOfCards);
 
     // Then we check if the length of the 'selectedCards' is equal to 2 as we will then need to check
     // if the 2 selected cards are the same or not
@@ -71,11 +72,15 @@ export const GameGrid = () => {
         cards[card.position] = card;
         setGameCards(cards);
 
-        // But since the cards aren't the same then we just sort of wait for 2 seconds to turn both 2 cards
+        // But since the cards aren't the same then we just sort of wait for 1.5 seconds to turn both 2 cards
         // over again
         setTimeout(() => {
-          console.log("set time out ran ..");
-        }, 2000);
+          cards[selectionOfCards[0].position].selected = false;
+          cards[selectionOfCards[1].position].selected = false;
+          console.log("cards:", cards);
+          setSelectedCards([]);
+          setGameCards(cards);
+        }, 1500);
       }
     } else {
       // If the length of the selected cards isn't equal to 2 then that means that the user hasn't selected
@@ -98,6 +103,8 @@ export const GameGrid = () => {
       );
     });
   };
+
+  console.log("render cards");
 
   return (
     <Box sx={{ flexGrow: 1 }}>
