@@ -36,6 +36,20 @@ export const GameGrid = () => {
     // If the card hasn't been clicked then we first update the cards 'selected' property
     card.selected = true;
 
+    // Then we add the clicked card to the list of selected cards
+    const selectionOfCards = [...selectedCards, card];
+    console.log("selection of cards:", selectionOfCards);
+
+    // Then we check if the length of the 'selectedCards' is equal to 2 as we will then need to check
+    // if the 2 selected cards are the same or not
+    if (selectionOfCards.length === 2) {
+      console.log("selections are the same");
+    } else {
+      // If the length of the selected cards isn't equal to 2 then that means that the user hasn't selected
+      // 2 cards just yet and so it is still the users turn to select another card for which reason we just
+      // update
+    }
+
     // Then we update the entire list of game cards to reflect that the clicked has been selected
     const cards = [...gameCards];
     cards[index] = card;
