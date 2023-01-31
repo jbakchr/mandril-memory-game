@@ -6,9 +6,9 @@ import { GameGrid } from "../components/GameGrid";
 
 export const HomePage = () => {
   return (
-    <Container maxWidth="md">
+    <>
       <GameHeader />
       <GameGrid />
-    </Container>
+    </>
   );
 };

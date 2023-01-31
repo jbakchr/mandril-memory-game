@@ -6,6 +6,7 @@ import _ from "lodash";
 import { GameCard } from "./GameCard";
 
 import data from "../data/data.json";
+import { Container } from "@mui/system";
 
 export const GameGrid = () => {
   const [gameCards, setGameCards] = useState([]);
@@ -116,10 +117,12 @@ export const GameGrid = () => {
   console.log("render cards");
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        {renderGameCards()}
-      </Grid>
-    </Box>
+    <Container maxWidth="md" style={{ marginTop: "15px" }}>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          {renderGameCards()}
+        </Grid>
+      </Box>
+    </Container>
   );
 };
