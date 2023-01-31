@@ -1,12 +1,12 @@
 # Mandril Memory Game
 
-This game is gonna blow your mind! Cuz .. it's a freaking memory game based on Casper & Mandrilaftalen 🥳 (and isn't that just wonderful..)
+This game is gonna blow your mind! Cuz .. it's a freaking memory game based on Casper & Mandrilaftalen 🥳 (and isn't that just wonderful..).
 
 ## How to play this awesome game
 
 Well .. for now there's (only) one way:
 
-- Run the project locally
+- [Run the project locally](https://github.com/jbakchr/mandril-memory-game#run-the-project-locally)
 
 #### _Prerequisites_ ..
 
@@ -17,7 +17,7 @@ But .. in order to run the game you'll need to have the following installed:
 
 ### Run the project locally
 
-Follow these instructions in order to play the game locally
+Follow these instructions in order to play the game locally.
 
 #### Clone the project
 
