@@ -40,12 +40,27 @@ export const GameGrid = () => {
 
     // Then we add the clicked card to the list of selected cards
     const selectionOfCards = [...selectedCards, card];
-    console.log("selection of cards:", selectionOfCards);
 
     // Then we check if the length of the 'selectedCards' is equal to 2 as we will then need to check
     // if the 2 selected cards are the same or not
     if (selectionOfCards.length === 2) {
-      console.log("selections are the same");
+      // If the user has selected 2 cards then we first check if the 2 cards holds the same image
+      if (selectionOfCards[0].imgUrl === card.imgUrl) {
+        console.log("cards are the same!!!");
+      } else {
+        // TODO: This update of unequal cards should be refactored to its own function
+        // if the cards aren't the same then we should first just show the image of the selected card which
+        // we do by just updating the list of cards
+        const cards = [...gameCards];
+        cards[index] = card;
+        setGameCards(cards);
+
+        // But since the cards aren't the same then we just sort of wait for 2 seconds to turn both 2 cards
+        // over again
+        setTimeout(() => {
+          console.log("set time out ran ..");
+        }, 2000);
+      }
     } else {
       // If the length of the selected cards isn't equal to 2 then that means that the user hasn't selected
       // 2 cards just yet and so it is still the users turn to select another card.
