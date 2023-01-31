@@ -33,6 +33,8 @@ export const GameGrid = () => {
       return;
     }
 
+    // TODO: The following two lines of code could be extracted to a function that could return an object with both the updated card and selection of cards which could then just be destructured in order to minimize code a bit (if you can find a good name for the function ..)
+
     // If the card hasn't been clicked then we first update the cards 'selected' property
     card.selected = true;
 
