@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box } from "@mui/material";
+import { Box, selectClasses } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import _ from "lodash";
 
@@ -33,24 +33,15 @@ export const GameGrid = () => {
       return;
     }
 
-    // If a card hasn't been clicked then we first set its 'selected' property
-    // to 'true'
-    const cards = updateCards(card, index);
+    // If the card hasn't been clicked then we first update the cards 'selected' property
+    card.selected = true;
 
-    // Then we add the clicked card to the 'selectedCards' array in order to check
-    // if the user has chosen two of the same cards
-    const updatedSelection = [...selectedCards, card];
-
-    setGameCards(cards);
-  };
-
-  const updateCards = (card, index) => {
+    // Then we update the entire list of game cards to reflect that the clicked has been selected
     const cards = [...gameCards];
-    cards[index] = {
-      ...card,
-      selected: true,
-    };
-    return cards;
+    cards[index] = card;
+
+    // And finally we just add the modified game cards back to state
+    setGameCards(cards);
   };
 
   const renderGameCards = () => {
