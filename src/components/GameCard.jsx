@@ -9,7 +9,10 @@ export const GameCard = ({ card, onCardClick }) => {
     onCardClick(card);
   };
 
-  const img = card.selected ? require(`../assets/${card.imgUrl}`) : logo;
+  const img =
+    card.selected || card.cardFound
+      ? require(`../assets/${card.imgUrl}`)
+      : logo;
 
   return (
     <Grid xs={2}>
