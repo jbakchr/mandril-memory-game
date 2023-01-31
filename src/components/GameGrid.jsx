@@ -41,11 +41,11 @@ export const GameGrid = () => {
     setGameCards(cards);
   }, []);
 
-  const onCardClick = (card, index) => {
+  const onCardClick = (card) => {
     console.log(card);
     // When a card is clicked we first check if has already been clicked
     // If so we just return as it doesn't make sense to do anything further
-    if (gameCards[index].selected) {
+    if (gameCards[card.position].selected) {
       return;
     }
 
@@ -68,7 +68,7 @@ export const GameGrid = () => {
         // if the cards aren't the same then we should first just show the image of the selected card which
         // we do by just updating the list of cards
         const cards = [...gameCards];
-        cards[index] = card;
+        cards[card.position] = card;
         setGameCards(cards);
 
         // But since the cards aren't the same then we just sort of wait for 2 seconds to turn both 2 cards
@@ -83,7 +83,7 @@ export const GameGrid = () => {
       // Hence we first update the list of cards in order to display the selected cards image when the list of
       // cards is rendered again
       const cards = [...gameCards];
-      cards[index] = card;
+      cards[card.position] = card;
 
       // And finally we then set state
       setSelectedCards(selectionOfCards);
@@ -92,14 +92,9 @@ export const GameGrid = () => {
   };
 
   const renderGameCards = () => {
-    return gameCards.map((card, index) => {
+    return gameCards.map((card) => {
       return (
-        <GameCard
-          key={index}
-          card={card}
-          cardIndex={index}
-          onCardClick={onCardClick}
-        />
+        <GameCard key={card.position} card={card} onCardClick={onCardClick} />
       );
     });
   };
