@@ -12,23 +12,37 @@ export const GameGrid = () => {
   const [selectedCards, setSelectedCards] = useState([]);
 
   useEffect(() => {
+    // When the game first mounts we create an array of cards the length of
+    // 2 times that of 'data'
     let cards = [];
     for (let i = 0; i < 2; i++) {
       for (let j = 0; j < data.length; j++) {
         cards.push({
-          position: i === 0 ? j : data.length + j,
           imgUrl: data[j],
           selected: false,
         });
       }
     }
 
+    // Then we shuffle the cards to create some randomness in the way they'll
+    // be layed out
     cards = _.shuffle(cards);
 
+    // And then we add a 'position' property to each card as this will make it
+    // much easier to locate the specific cards later on in the game
+    cards = cards.map((card, index) => {
+      return {
+        ...card,
+        position: index,
+      };
+    });
+
+    // Lastly we set the cards on state so the can get rendered and the game begin
     setGameCards(cards);
   }, []);
 
   const onCardClick = (card, index) => {
+    console.log(card);
     // When a card is clicked we first check if has already been clicked
     // If so we just return as it doesn't make sense to do anything further
     if (gameCards[index].selected) {
