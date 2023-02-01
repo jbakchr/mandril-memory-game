@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/21309287/215960835-465accbc-651e-4575-
 
 Well .. for now there's two ways:
 
-- [Play the game online](https://mandril-cfb1e.web.app/)
+- [Play the game online](https://github.com/jbakchr/mandril-memory-game#play-the-game-online)
 - [Run the project locally](https://github.com/jbakchr/mandril-memory-game#run-the-project-locally)
 
 #### _Prerequisites_ ..
