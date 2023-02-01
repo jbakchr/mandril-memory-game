@@ -6,16 +6,21 @@ https://user-images.githubusercontent.com/21309287/215960835-465accbc-651e-4575-
 
 ## How to play this awesome game
 
-Well .. for now there's (only) one way:
+Well .. for now there's two ways:
 
+- [Play the game online](https://mandril-cfb1e.web.app/)
 - [Run the project locally](https://github.com/jbakchr/mandril-memory-game#run-the-project-locally)
 
 #### _Prerequisites_ ..
 
-But .. in order to run the game you'll need to have the following installed:
+But .. in order to run the game locally you'll need to have the following installed:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/)
+
+### Play the game online
+
+This should be a no-brainer .. so go to https://mandril-cfb1e.web.app/ as the game is hosted on Firebase there.
 
 ### Run the project locally
 
