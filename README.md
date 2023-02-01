@@ -2,6 +2,8 @@
 
 This game is gonna blow your mind! Cuz .. it's a freaking memory game based on Casper & Mandrilaftalen 🥳 (and isn't that just wonderful..).
 
+https://user-images.githubusercontent.com/21309287/215960835-465accbc-651e-4575-a6e7-e55853007b42.mov
+
 ## How to play this awesome game
 
 Well .. for now there's (only) one way:
